@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>AMA</title>
+
+    <style>
+      body { max-width:80%; padding:0; margin:auto; }
+      dl { padding: 0 0.5em; }
+      dt, dd { margin: 0; }
+      dd + dt { margin-top: 1em; }
+      input[type="submit"] { font-size:1em; }
+      input[type="text"], textarea { display:block; box-sizing:border-box; min-width:100%; }
+      textarea { font-family:monospace; }
+      #header { text-align:center; }
+      #sent { display:none; }
+      #sent:target { display:block; padding:1em; background:green; color:white; }
+    </style>
+  </head>
+
+  <body>
+    <div id="header">
+      <h1>AMA</h1>
+      <h2>Ask Me Anything.</h2>
+      <p>Just ask &amp; wait for my response. — <a rel="nofollow" href="https://github.com/jakwings/AMA/issues">J.W</a></p>
+      <p id="sent" hidden><b>Your message has been successfully sent to somewhere.</b></p>
+    </div>
+
+    <hr>
+
+    <div>
+      <dl>
+        <dt>Question: Q&amp;A's in the past?</dt>
+        <dd>Answer: See below.</dd>
+
+        <dt>Q: What&apos;s your real email address?</dt>
+        <dt>Q: How do I get private response from you?</dt>
+        <dd>A: My email address is useless, especially if you don&apos;t care who I am.</dd>
+        <dd>A: If you don&apos;t use email, you can also create a temporary web page on <a rel="nofollow" href="https://privatebin.net/">privatebin.net</a> (with &quot;Open discussion&quot; enabled) and tell me the URL of that web page.</dd>
+        <dd>A: If you&apos;are more serious, please learn more about <a href="https://ssd.eff.org/">PGP</a> and use my public key embedded in <a href="hello.js">this file</a>.</dd>
+      </dl>
+    </div>
+
+    <div>
+      <form id="hello" action="https://getsimpleform.com/messages?form_api_token=7a909c2e20e0ca8c7b24b49a036cabf6" method="post">
+        <fieldset><legend>Guest Area</legend>
+          <input type="hidden" name="redirect_to" value="https://jakwings.github.io/AMA/#sent">
+          <p><label>Your Name: <input type="text" name="name" placeholder="optional"></label></p>
+          <p><label>Your Email: <input type="text" name="email" placeholder="optional"></label></p>
+          <p><label>Your Message: <textarea name="message" placeholder="type something here"></textarea></label></p>
+          <p><input type="submit" value="Send"> | <label><input id="crypto" type="checkbox" disabled> Encrypted <span id="status">(Unsupported)</span></label></p>
+        </fieldset>
+      </form>
+    </div>
+
+    <div id="footer">
+      <p>This messaging service is powered by <a rel="nofollow" href="https://liveformhq.com/">Live Form</a> and <a rel="nofollow" href="https://openpgpjs.org/">OpenPGP.js</a>☘</p>
+
+      <noscript>
+        <p><b>You can enable JavaScript for client-side encryption of messaging.</b></p>
+      </noscript>
+    </div>
+    <script src="openpgp.min.js"></script>
+    <script src="hello.js"></script>
+  </body>
+</html>
